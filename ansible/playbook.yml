@@ -4,7 +4,5 @@
   roles:
     - role: common
       tags: [common]
-    - role: java
-      tags: [java]
-    - role: node
-      tags: [node]
+    - role: terraform
+      tags: [terraform]

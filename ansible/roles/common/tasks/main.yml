@@ -2,17 +2,13 @@
   dnf:
     name: "*"
     state: latest
+- name: Install vim
+  dnf:
+    name: vim
+    state: latest
 - name: Autoremove unneeded packages installed as dependencies
   dnf:
     autoremove: yes
-- name: Install podman
-  dnf:
-    name: podman
-    state: latest
-- name: Install podman-compose
-  dnf:
-    name: podman-compose
-    state: latest
 - name: Create vscdev user
   ansible.builtin.user:
     name: vscdev
@@ -24,21 +20,3 @@
     user: vscdev
     state: present
     key: "{{ lookup('file', vagrant_ssh_pub_key) }}"
-- name: Add podman to docker alias to bashrc
-  ansible.builtin.lineinfile:
-    path: /home/vscdev/.bashrc
-    line: alias docker=podman
-    owner: vscdev
-    search_string: alias docker=podman
-    state: present
-    insertafter: EOF
-    create: yes
-- name: Add podman-compose to docker-compose alias to bashrc
-  ansible.builtin.lineinfile:
-    path: /home/vscdev/.bashrc
-    line: alias docker-compose=podman-compose
-    owner: vscdev
-    search_string: alias docker-compose=podman-compose
-    state: present
-    insertafter: EOF
-    create: yes

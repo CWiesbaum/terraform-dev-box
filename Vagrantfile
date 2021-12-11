@@ -1,11 +1,11 @@
-vbname = ENV["VAGRANT_NAME"] || "podman_provider"
+vbname = ENV["VAGRANT_NAME"] || "terraformDevBox"
 vbcpus = ENV["VAGRANT_CPUS"] || 1
 vbmemory = ENV["VAGRANT_MEMORY"] || 2048
 vbsshpubkey = ENV["VAGRANT_SSH_PUB_KEY"] || "~/.ssh/id_rsa.pub"
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "fedora/34-cloud-base"
-  config.vm.box_version = "34.20210423.0"
+  config.vm.box = "fedora/33-cloud-base"
+  config.vm.box_version = "33.20201019.0"
 
   config.vm.provider "virtualbox" do |vbconfig|
     vbconfig.gui = false

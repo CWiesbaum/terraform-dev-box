@@ -1,6 +1,6 @@
-# Visual Studio Code Podman Box (vsc-podman)
+# Visual Studio Code terraform Box
 
-This repository contains some IaC scripts to build a fedora based VirtualBox running podman. The box in conjunction with Visual Studio Code (VSC) is meant as a drop in solution for Docker.
+This repository contains some IaC scripts to build a fedora based VirtualBox running terraform.
 
 ## How it works
 
@@ -12,7 +12,7 @@ Due to VSC implementation, all non UI related VSC plugins will be installed on t
 
 The following environment variables can be set to amend the resulting VM:
 
-**VAGRANT_NAME** - VirtualBox name; *Default:* podman_provider
+**VAGRANT_NAME** - VirtualBox name; *Default:* terraformDevBox
 
 **VAGRANT_CPUS** - Number of CPUs; *Default: 1*
 
@@ -31,9 +31,15 @@ The script prompts for each possible option and generate the correct environment
 ```bash
 Execute the following commands before running vagrant up
 export VAGRANT_CPUS=1
-export VAGRANT_NAME=podman_provider
+export VAGRANT_NAME=terraformDevBox
 export VAGRANT_MEMORY=2048
 export VAGRANT_SSH_PUB_KEY=~/.ssh/id_rsa.pub
+```
+
+It is advisable to save these commands in a file and source the file before starting the VM:
+
+```
+. /.vagrantrc
 ```
 
 In order to setup a new box navigate to project root directory and run
@@ -43,10 +49,8 @@ $ vagrant up
 ```
 
 The resulting VirtualBox contains the following software:
- - podman
- - podman-compose
- - Java (8, 11, 16)
- - aliases for podman to docker and podman-compose to docker-compose
+ - vim
+ - terraform
 
 In order to refine the basic box to your needs, you can add your required software and configurations using ansible.
 
