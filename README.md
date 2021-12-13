@@ -50,6 +50,8 @@ $ vagrant up
 
 The resulting VirtualBox contains the following software:
  - vim
+ - git
+ - wget
  - terraform
 
 In order to refine the basic box to your needs, you can add your required software and configurations using ansible.
