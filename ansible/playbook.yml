@@ -6,3 +6,5 @@
       tags: [common]
     - role: terraform
       tags: [terraform]
+    - role: aws
+      tags: [aws]

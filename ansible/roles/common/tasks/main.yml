@@ -2,9 +2,20 @@
   dnf:
     name: "*"
     state: latest
+- name: Set Timezone
+  community.general.timezone:
+    name: Europe/Berlin
 - name: Install vim
   dnf:
     name: vim
+    state: latest
+- name: Install git
+  dnf:
+    name: git
+    state: latest
+- name: Install wget
+  dnf:
+    name: wget
     state: latest
 - name: Autoremove unneeded packages installed as dependencies
   dnf:
