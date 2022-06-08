@@ -1,0 +1,10 @@
+- name: Add Azure repository
+  yum_repository:
+    name: azure
+    description: Azure YUM repo
+    baseurl: https://packages.microsoft.com/config/rhel/8/packages-microsoft-prod.rpm
+    gpgcheck: no
+- name: Install azure cli
+  dnf:
+    name: azure-cli
+    state: latest

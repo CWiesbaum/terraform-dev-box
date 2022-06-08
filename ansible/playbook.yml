@@ -8,3 +8,5 @@
       tags: [terraform]
     - role: aws
       tags: [aws]
+    - role: azure
+      tags: [azure]
